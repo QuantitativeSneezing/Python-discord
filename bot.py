@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands, tasks, voice_recv
 import vosk
 import pyaudio
 import os
@@ -44,7 +44,7 @@ async def joinvc(ctx):
         await ctx.voice_state.voice.move_to(destination)
         return
     await destination.connect()
-    await ctx.send(f"Successfully joined the voice channel: {destination.name} ({destination.id}).")
+    await ctx.send("Successfully joined the voice channel.")
 
 @bot.hybrid_command(description="Leaves the vc channel the bot is in")
 async def leavevc(ctx):
@@ -53,8 +53,25 @@ async def leavevc(ctx):
         await ctx.voice_client.disconnect()
 
 
+@bot.hybrid_command(description="Joins a channel and transcribes the audio in it")
+async def transcribe(ctx):
+    def callback(user, data: voice_recv.VoiceData):
+            print(f"Got packet from {user}")
+            print(data)
+            # print (f"Here's data hopefully(?){ext_data}")
 
 
+    if not ctx.author.voice:
+        await ctx.send('Channel not found')
+        return
+
+    if ctx.voice_client:
+        # Documentation for discord voice library requires us to connect with voice_recv... every time to enable audio
+        await ctx.voice_client.disconnect()
+
+    vc = await ctx.author.voice.channel.connect(cls=voice_recv.VoiceRecvClient)
+    vc.listen(voice_recv.BasicSink(callback))
+    await ctx.send(F"Here's the data ")
 
 Token = os.getenv('TOKEN')
 bot.run(Token)
