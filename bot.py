@@ -33,7 +33,7 @@ async def ping(ctx):
     await ctx.send('Pong')
 
 
-@bot.hybrid_command(description="join the vc channel you are in")
+@bot.hybrid_command(description="Joins the vc channel you are in")
 async def joinvc(ctx):
     await ctx.send('Joining!')
     if not ctx.author.voice:
@@ -44,9 +44,9 @@ async def joinvc(ctx):
         await ctx.voice_state.voice.move_to(destination)
         return
     await destination.connect()
-    await ctx.send(f"Succesfully joined the voice channel: {destination.name} ({destination.id}).")
+    await ctx.send(f"Successfully joined the voice channel: {destination.name} ({destination.id}).")
 
-@bot.hybrid_command(description="leave current the vc channel the bot is in")
+@bot.hybrid_command(description="Leaves the vc channel the bot is in")
 async def leavevc(ctx):
     await ctx.send('Leaving!')
     if ctx.voice_client:
