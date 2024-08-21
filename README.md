@@ -1,2 +1,1 @@
-# Python-discord
-Python discord bot
+Another day, another discord bot
