@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7168422df0527013e1f8dd5c229e01f96d3c36ba4431a8ff64a079099a73cad1"
+            "sha256": "4ca4d30b6a5ad379c9ebb2803037ae4408cdc2669b38d777478e5d81b8ce5f41"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -350,6 +350,21 @@
             "markers": "python_version >= '3.8'",
             "version": "==2.4.0"
         },
+        "ffmpeg": {
+            "hashes": [
+                "sha256:6931692c890ff21d39938433c2189747815dca0c60ddc7f9bb97f199dba0b5b9"
+            ],
+            "index": "pypi",
+            "version": "==1.4"
+        },
+        "ffmpeg-python": {
+            "hashes": [
+                "sha256:65225db34627c578ef0e11c8b1eb528bb35e024752f6f10b78c011f6f64c4127",
+                "sha256:ac441a0404e053f8b6a1113a77c0f452f1cfc62f6344a769475ffdc0f56c23c5"
+            ],
+            "index": "pypi",
+            "version": "==0.2.0"
+        },
         "frozenlist": {
             "hashes": [
                 "sha256:04ced3e6a46b4cfffe20f9ae482818e34eba9b5fb0ce4056e4cc9b6e212d09b7",
@@ -432,6 +447,14 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==1.4.1"
+        },
+        "future": {
+            "hashes": [
+                "sha256:929292d34f5872e70396626ef385ec22355a1fae8ad29e1a734c3e43f9fbc216",
+                "sha256:bd2968309307861edae1458a4f8a4f3598c03be43b97521076aebf5d94c07b05"
+            ],
+            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==1.0.0"
         },
         "idna": {
             "hashes": [
@@ -537,6 +560,26 @@
             "markers": "python_version >= '3.7'",
             "version": "==6.0.5"
         },
+        "opuspy": {
+            "hashes": [
+                "sha256:1c75f79336cd61bdb0ebbb755ca510267294dcd6eba49e2b6d20bf3ac5ecb1e3",
+                "sha256:408c31e8645bf1ff288c2cc719947736fa6a179f70543b6307ba21f84a6ed43c",
+                "sha256:4a6acb48d7e3b81d5f110f57e630417d3aeb5e8389739300700a39958675da13",
+                "sha256:5271c0db4effe7cfa78a6d7048470619c9a93ae72dec6ab744abbf589c3ac1d7",
+                "sha256:5ebfc9d655c7ce3eb2f8378000fbc57b2549d43f22e2736e2faabfe1f61bc9fd",
+                "sha256:617414f98e8bf49f516377ff80617d6890b497e3e8599ca66c9ae51e2d64b10b",
+                "sha256:92cf5440bcbd148dc7d58364bfd632b0d2b7c9c0d22525c4f3490d03538aa1ba",
+                "sha256:9a62997bddb75c82138aa99a705fe554276fec1d0511cf0d14756ed88daf6b7c",
+                "sha256:c63558f8e48f6e27b60c07b486b2114a2070664cf6f870588572b2d151e9f0f1",
+                "sha256:c74bec5052c2b591f9f5975f0272f6953b3d835866fc848471368c4c1a8580a6",
+                "sha256:e00e8069c77fb12627f9d10d67eed5ac6526f084227bdc2cb7566a6a5c6bbefc",
+                "sha256:e0106a462c0a3a4b94dca114678dc132ef53de5cf05c0da87ade49b3f6b5c837",
+                "sha256:e3af61be968762c40a3ae72fc42588a97540d0dc8bdfadb7c30bb565dfaa1195",
+                "sha256:e5c53d39ac5ee1490f51cace6de792c2b022a9d1f907167a7a773dde962e32ca"
+            ],
+            "index": "pypi",
+            "version": "==0.0.3"
+        },
         "pyaudio": {
             "hashes": [
                 "sha256:009f357ee5aa6bc8eb19d69921cd30e98c42cddd34210615d592a71d09c4bd57",
@@ -562,6 +605,14 @@
             "markers": "python_version >= '3.8'",
             "version": "==2.22"
         },
+        "pyee": {
+            "hashes": [
+                "sha256:5d346a7d0f861a4b2e6c47960295bd895f816725b27d656181947346be98d7c1",
+                "sha256:b53af98f6990c810edd9b56b87791021a8f54fd13db4edd1142438d44ba2263f"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==11.1.0"
+        },
         "pynacl": {
             "hashes": [
                 "sha256:06b8f6fa7f5de8d5d2f7573fe8c863c051225a27b61e6860fd047b1775807858",
@@ -576,6 +627,24 @@
                 "sha256:e46dae94e34b085175f8abb3b0aaa7da40767865ac82c928eeb9e57e1ea8a543"
             ],
             "version": "==1.5.0"
+        },
+        "pyogg": {
+            "hashes": [
+                "sha256:40f79b288b3a667309890885f4cf53371163b7dae17eb17567fb24ab467eca26",
+                "sha256:794db340fb5833afb4f493b40f91e3e0f594606fd4b31aea0ebf5be2de9da964",
+                "sha256:8294b34aa59c90200c4630c2cc4a5b84407209141e8e5d069d7a5be358e94262"
+            ],
+            "index": "pypi",
+            "version": "==0.6.14a1"
+        },
+        "python-ffmpeg": {
+            "hashes": [
+                "sha256:19ac80af5a064a2f53c245af1a909b2d7648ea045500d96d3bcd507b88d43dc7",
+                "sha256:d86697da8dfb39335183e336d31baf42fb217468adf5ac97fd743898240faae3"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==2.0.12"
         },
         "requests": {
             "hashes": [
@@ -599,6 +668,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==4.66.5"
+        },
+        "typing-extensions": {
+            "hashes": [
+                "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
+                "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==4.12.2"
         },
         "urllib3": {
             "hashes": [

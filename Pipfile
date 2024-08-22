@@ -8,6 +8,11 @@ discord-ext-voice-recv = "*"
 discord = "*"
 vosk = "*"
 pyaudio = "*"
+ffmpeg = "*"
+python-ffmpeg = "*"
+opuspy = "*"
+ffmpeg-python = "*"
+pyogg = "*"
 
 [dev-packages]
 

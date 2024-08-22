@@ -4,6 +4,7 @@ import vosk
 import pyaudio
 import os
 from dotenv import load_dotenv
+import pyogg
 
 
 load_dotenv()
@@ -12,6 +13,11 @@ load_dotenv()
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='$', intents=intents)
+
+discord.opus._load_default()
+
+model= "./stt_model"
+recognizer= vosk.KaldiRecognizer
 
 
 @bot.event
@@ -52,15 +58,24 @@ async def leavevc(ctx):
     if ctx.voice_client:
         await ctx.voice_client.disconnect()
 
-
+# Worth mentioning that discord doesn't support
 @bot.hybrid_command(description="Joins a channel and transcribes the audio in it")
 async def transcribe(ctx):
-    def callback(user, data: voice_recv.VoiceData):
+    buffer = []
+
+    def flush(buffer):
+        print(buffer)
+        buffer.clear()
+        # print (F"Empty buffer:{buffer}")
+
+
+    def audio_processing_callback(user, data: voice_recv.VoiceData):
             print(f"Got packet from {user}")
-            print(data)
-            # print (f"Here's data hopefully(?){ext_data}")
-
-
+            # print(dir(data))
+            buffer.append(data.packet)
+            # print(data.packet)
+            if len(buffer) > 45:
+                flush(buffer)
     if not ctx.author.voice:
         await ctx.send('Channel not found')
         return
@@ -70,8 +85,10 @@ async def transcribe(ctx):
         await ctx.voice_client.disconnect()
 
     vc = await ctx.author.voice.channel.connect(cls=voice_recv.VoiceRecvClient)
-    vc.listen(voice_recv.BasicSink(callback))
-    await ctx.send(F"Here's the data ")
+    # vc.wants_opus(False)
+    # print(dir(voice_recv.BasicSink))
+    vc.listen(voice_recv.BasicSink(audio_processing_callback))
+    await ctx.send(F"Transcribing!")
 
 Token = os.getenv('TOKEN')
 bot.run(Token)
